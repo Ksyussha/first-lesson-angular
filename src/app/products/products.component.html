@@ -1,0 +1,11 @@
+<h1 class="mid">Products</h1>
+<div class="fl">
+<div *ngFor="let product of products">
+  <p>id: {{ product.id }}</p>
+  <p>title: {{ product.title }}</p>
+  <p>price: {{ product.price }}</p>
+  <p>RAM: {{ product.spec.RAM }}</p>
+  <p>ROM:{{ product.spec.ROM }}</p>
+  <img [src]="product.picture" />
+  <br>
+</div></div>

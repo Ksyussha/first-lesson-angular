@@ -1,0 +1,11 @@
+.fl{
+    display: flex;
+    justify-content: space-evenly;
+}
+.mid{
+    text-align: center;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
