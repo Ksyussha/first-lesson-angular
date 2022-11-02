@@ -1,11 +1,8 @@
 .fl{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .mid{
     text-align: center;
-}
-img{
-    width: 100px;
-    height: 100px;
 }

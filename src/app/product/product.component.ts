@@ -22,6 +22,6 @@ export class ProductComponent implements OnInit {
       'products',
       this.id
     );
-    this.product = new Product(product.id, product.title, product.price, product.spec);
+    this.product = new Product(product.id, product.title, product.price, product.spec, product.picture);
   }
 }
