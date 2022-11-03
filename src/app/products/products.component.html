@@ -1,8 +1,8 @@
 <h1 class="text-2xl mid mb-10 mt-10">Products</h1>
 <div class="fl">
-  <div *ngFor="let product of products" class="card w-96 bg-base-100 shadow-xl" [routerLink]="['/products', product.id]"  >
-      <img [src]="product.picture" class="max-h-40 w-full object-contain" />
-      <div class="bg-white dark:bg-gray-800 w-full p-4">
+  <div *ngFor="let product of products" class="card w-96 bg-base-100 shadow-xl"  >
+      <img [src]="product.picture" class="max-h-40 w-full object-contain"  [routerLink]="['/products', product.id]"/>
+      <div class="bg-white dark:bg-gray-800 w-full p-4" [routerLink]="['/products', product.id]">
         <p class="text-indigo-500 text-md font-medium"></p>
         <p>id: {{ product.id }}</p>
         <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
@@ -18,6 +18,7 @@
         <p class="text-gray-400 dark:text-gray-300 font-light text-md">
           ROM:{{ product.spec.ROM }}
         </p>
+        <button (click)="addToCart(product.id)">add to cart</button>
       </div>
   </div>
 

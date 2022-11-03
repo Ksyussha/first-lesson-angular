@@ -1,13 +1,22 @@
 
-<div class="fl">
-  <div class="imgIn">
+<div class="product-card">
+  <div class="images">
     <img [src]="product.picture" class="" />
 </div>
-    <div class="txtIn">
-      <p class="dark:text-gray-400">{{ product.id }}</p>
-      <h1 class="text-5xl font-bold py-6">{{ product.title }}</h1>
-      <p class="dark:text-gray-400">RAM:{{ product.spec.RAM }}</p>
-      <p class="dark:text-gray-400">ROM:{{ product.spec.ROM }}</p>
-      <p>price:{{ product.price }}</p>
+    <div class="card-textin">
+      <div class="card-text">
+      <p  class="description">{{ product.id }}</p>
+      <h1 class="title">{{ product.title }}</h1>
+      <p  class="description">RAM:{{ product.spec.RAM }}</p>
+      <p  class="description">ROM:{{ product.spec.ROM }}</p>
+    </div>
+    <div class="price-and-cart">
+      <p class="price">price:{{ product.price }}</p>
+      <a href=""><button class="card-text-button">add to cart</button></a>
+        <a href=""><button class="card-text-button">buy now</button></a>
+      </div>
+   
   </div>
 </div>
+
+
