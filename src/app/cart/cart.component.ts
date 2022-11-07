@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { db } from 'src/utils/firebase';
+import { collection, query, where, getDocs } from "firebase/firestore";
+
 import FirebaseMethods from 'src/utils/firebaseMethods';
+import { getAuth } from 'firebase/auth';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +15,11 @@ export class CartComponent implements OnInit {
   constructor(private firebaseMethods: FirebaseMethods) {}
 
   async ngOnInit(): Promise<void> {
-    const productsSnapshot = await this.firebaseMethods.getDocuments('cart');
+    const auth = getAuth();
+    const user = auth.currentUser;
+    console.log(user);
+    const q = query(collection(db, "cart"), where("uid", "==", user?.uid));
+    const productsSnapshot = await getDocs(q)
     const products: {
       id: string;
       title: any;
@@ -32,7 +40,7 @@ export class CartComponent implements OnInit {
       });
     });
     this.products = products;
-    // console.log(this.products);
+    console.log(this.products);
   }
 
 }
