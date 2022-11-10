@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { db } from 'src/utils/firebase';
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 import FirebaseMethods from 'src/utils/firebaseMethods';
 import { getAuth } from 'firebase/auth';
+import { Product } from '../models/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -42,5 +43,8 @@ export class CartComponent implements OnInit {
     this.products = products;
     console.log(this.products);
   }
+  // async delete(){
+  //   const productsSnapshot = await this.firebaseMethods.removeDocument('cart', Product.id)
+  // }
 
 }

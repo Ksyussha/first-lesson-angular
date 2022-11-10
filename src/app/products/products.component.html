@@ -3,7 +3,7 @@
 <div class="fl">
   <div *ngFor="let product of products" class="card w-96 bg-base-100 shadow-xl cursor-pointer mr-4 mb-8"  >
       <img [src]="product.picture" class="mt-5 max-h-40 w-full object-contain "  [routerLink]="['/products', product.id]"/>
-      <div class="bg-white dark:bg-gray-800 w-full p-4">
+      <div class="bg-white dark:bg-gray-800 w-full p-4" [routerLink]="['/products', product.id]">
         <p class="text-indigo-500 text-md font-medium"></p>
         <p>id: {{ product.id }}</p>
         <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
@@ -19,8 +19,10 @@
         <p class="text-gray-400 dark:text-gray-300 font-light text-md">
           ROM:{{ product.spec.ROM }}
         </p>
-        <button (click)="addToCart(product.id)">add to cart</button>
+        <!-- <button (click)="addToCart(product.id)" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4  font-medium rounded-full text-sm px-5 py-2 mr-2 mb-2 bg-[#48d48e]  dark:focus:ring- dark:border-gray-700">add to cart</button> -->
+
       </div>
+      <button (click)="addToCart(product.id)" class="text-white bg-[#7796f2] hover:bg-[#7796f2] focus:outline-none focus:ring-4  font-medium rounded-full text-sm px-5 py-2 mr-2 mb-2 " >add to cart</button>
   </div>
 
   <br />
